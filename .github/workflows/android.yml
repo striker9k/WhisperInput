@@ -24,7 +24,7 @@ jobs:
       run: |
         echo "${{ secrets.RELEASE_KEYSTORE }}" > release.keystore.asc ;
         gpg -d --batch --passphrase="${{ secrets.RELEASE_KEYSTORE_PASSPHRASE }}" release.keystore.asc > release.keystore ;
-        echo "signingStoreLocation=release.keystore" > signing.properties ;
+        echo "signingStoreLocation=../release.keystore" > signing.properties ;
         echo "signingStorePassword=KAReOruifAQnp18" >> signing.properties ;
         echo "signingKeyAlias=release" >> signing.properties ;
         echo "signingKeyPassword=KAReOruifAQnp18" >> signing.properties ;
